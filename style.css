@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.video-background {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: auto;
+  z-index: -10;
+}
+
+video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.video-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/*container*/
+.container {
+  min-width: 300px;
+  min-height: 300px;
+  color: black;
+  // margin: 0 auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  padding: 25px 50px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 1rem 1rem 1rem rgba(0, 0, 0, 0.4);
+}
+
+/*forms*/
+#countdown-form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  width: 100%;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  margin: 3px 0 5px 0;
+  font-family: "Roboto", sans-serif;
+}
+
+button {
+  padding: 10px 15px;
+  margin-top: 20px;
+  border-style: none;
+  border-radius: 25px;
+  color: white;
+  background: rgb(156, 121, 74);
+  box-shadow: 2px 2px 20px 10px rgba(0, 0, 0, 0.2);
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+button:hover {
+  filter: brightness(120%);
+}
+
+button:active {
+  transform: translate(0, 0.5rem);
+  transform: scale(0.98);
+  box-shadow: 0 0.1rem rgba(0, 0, 0, 0.6);
+}
+
+label {
+  margin-left: 5px;
+}
+
+ul {
+  list-style-type: none;
+  align-items: center;
+}
+
+li {
+  margin: 10px 0;
+  display: inline-block;
+  text-transform: uppercase;
+  padding: 20px;
+  font-size: 20px;
+  text-align: center;
+  align-items: center;
+}
+
+li > span {
+  text-align: center;
+  font-size: 60px;
+  display: block;
+}
+
+.button-center {
+  display: flex;
+  justify-content: center;
+}
+
+#countdown-button {
+  width: 80%;
+}
+
+#countdown-title {
+  text-align: center;
+}
+
+/*Complete*/
+
+.complete-title {
+  text-align: center;
+}
+
+.countdown-animation {
+  animation: complete 4s infinite;
+}
+
+#complete-info {
+  font-size: 30px;
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+#complete {
+  margin: auto 0;
+}
+
+#complete-button {
+  width: 75%;
+}
+
+/*Media query*/
+@media only screen and (max-width: 600px) {
+  .video-background {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  video {
+    object-fit: cover;
+    object-position: 60%;
+    margin-top: -1;
+  }
+
+  .video-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .container {
+    width: 92%;
+    min-height: 45%;
+  }
+
+  .input-container {
+    font-size: 12.5px;
+    letter-spacing: 0.2px;
+  }
+
+  form {
+    margin-top: 30px;
+  }
+
+  input {
+    margin-top: 5px;
+  }
+
+  label {
+    font-size: 17px;
+  }
+
+  label:nth-last-of-type(1) {
+    margin-top: 30px;
+  }
+
+  #countdown-title {
+    font-size: 25px;
+    letter-spacing: 1.5px;
+  }
+
+  li {
+    width: 45%;
+  }
+
+  li > span {
+    font-size: 30px;
+  }
+}
+
+/*animation*/
+
+@keyframes complete {
+  0% {
+    color: rgb(191, 42, 211);
+  }
+  25% {
+    color: rgb(125, 17, 226);
+  }
+  50% {
+    color: rgb(30, 199, 81);
+    transform: scale(1.5);
+  }
+  75% {
+    color: rgb(224, 133, 15);
+  }
+  100% {
+    color: rgb(207, 27, 27);
+  }
+}

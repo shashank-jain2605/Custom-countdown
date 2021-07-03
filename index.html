@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Custom Countdown</title>
+  </head>
+  <body>
+    <!-- video  bbackground -->
+    <video class="video-background" loop muted autoplay>
+      <source src="./compressed_time.mp4" />
+    </video>
+    <div class="video-overlay"></div>
+    <!-- container -->
+    <div class="container">
+      <!-- input -->
+      <div class="input-container" id="input-container">
+        <h1>Create a custom counter</h1>
+        <form class="form" id="countdown-form">
+          <label for="title">Title</label>
+          <input
+            type="text"
+            id="title"
+            placeholder="What are you counting down to?"
+          />
+          <label for="date-picker">Select a date</label>
+          <input type="date" id="date-picker" />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <!-- countdown -->
+      <div class="countdown" id="countdown" hidden>
+        <h1 id="countdown-title">Countdown title here</h1>
+        <ul>
+          <li><span>3</span>days</li>
+          <li><span>10</span>hours</li>
+          <li><span>20</span>minutes</li>
+          <li><span>55</span>seconds</li>
+        </ul>
+        <div class="button-center button-reset">
+          <button id="countdown-button">Reset</button>
+        </div>
+      </div>
+      <!-- complete -->
+      <div class="complete" id="complete" hidden>
+        <h1 class="complete-title countdown-animation">
+          Countdown Complete 🎉
+        </h1>
+        <h1 id="complete-info" class="complete-title countdow-finish">
+          Countdown Finished on 01-07-2021
+        </h1>
+        <div class="button-center button-complete">
+          <button id="complete-button">New countdown</button>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
